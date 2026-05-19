@@ -1,0 +1,103 @@
+# ============================================================
+# .gitignore — Benin Electrification Analysis
+# ============================================================
+
+# ------------------------------------------------------------
+# LARGE DATA FILES  (re-download / re-extract as needed)
+# ------------------------------------------------------------
+# Settlement GeoJSON is 36 MB — over GitHub's recommended 50 MB
+# but keep it if under — uncomment the line below to exclude it
+# data/raw/Benin_settlement_properties.geojson
+
+# GEE master CSV (1.7 MB — safe to include, but listed here for awareness)
+# data/raw/Benin_GEE_Master.csv
+
+# Any future large rasters or shapefiles
+data/raw/*.tif
+data/raw/*.shp
+data/raw/*.dbf
+data/raw/*.shx
+data/raw/*.prj
+data/raw/*.cpg
+*.zip
+
+# ------------------------------------------------------------
+# GENERATED OUTPUTS  (reproducible from notebook — not committed)
+# ------------------------------------------------------------
+outputs/maps/*.html
+outputs/figures/*.png
+data/processed/
+
+# ------------------------------------------------------------
+# PYTHON ENVIRONMENT
+# ------------------------------------------------------------
+venv/
+env/
+.env/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# ------------------------------------------------------------
+# JUPYTER NOTEBOOK artifacts
+# ------------------------------------------------------------
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+# Uncomment below if you want to strip outputs before committing
+# (keeps the .ipynb clean and diff-friendly)
+# *.ipynb  ← don't exclude the notebook itself!
+
+# ------------------------------------------------------------
+# OS FILES
+# ------------------------------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# ------------------------------------------------------------
+# EDITOR / IDE
+# ------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# ------------------------------------------------------------
+# SECRETS & CREDENTIALS  (never commit these)
+# ------------------------------------------------------------
+.env
+*.env
+secrets.json
+credentials.json
+*_credentials*
+service_account*.json
+# Google Earth Engine credentials
+.config/earthengine/
+
+# ------------------------------------------------------------
+# LOGS & TEMPORARY FILES
+# ------------------------------------------------------------
+*.log
+*.tmp
+*.temp
+.cache/
