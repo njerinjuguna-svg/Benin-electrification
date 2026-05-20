@@ -1,6 +1,6 @@
 # ⚡ Benin Least-Cost Electrification Analysis
 
-> **VIDA Technical Assignment** — Demand & Least-Cost Electrification Modelling  
+> **VIDA Technical Assignment** Demand & Least-Cost Electrification Modelling  
 > A satellite-enriched, least-cost electrification model for 7,000+ unelectrified settlements across Benin, West Africa.
 
 ---
@@ -27,17 +27,17 @@
 
 ## Overview
 
-Benin has a national electrification rate of approximately 45%, with over **3.9 million people** living without access to electricity — concentrated in rural and peri-urban settlements far from the existing medium-voltage (MV) grid.
+Benin has a national electrification rate of approximately 45%, with over **3.9 million people** living without access to electricity concentrated in rural and peri-urban settlements far from the existing medium-voltage (MV) grid.
 
 This analysis implements a **least-cost electrification model** that:
 
 1. Estimates electricity demand for each unelectrified settlement over a **15-year planning horizon**
 2. Calculates the Levelised Cost of Energy (**LCOE**) for three technology options per settlement
-3. Assigns the **least-cost technology** — with a productive-use upgrade rule
+3. Assigns the **least-cost technology** with a productive-use upgrade rule
 4. Scores and ranks settlements for **investment prioritisation**
 5. Tests **four cost scenarios** to assess recommendation robustness
 
-The model is enriched with **Google Earth Engine (GEE) satellite data** — solar radiation, land cover, terrain slope, vegetation index, rainfall, and nighttime lights — extracted for every unelectrified settlement, making this more spatially precise than standard national-average approaches.
+The model is enriched with **Google Earth Engine (GEE) satellite data** solar radiation, land cover, terrain slope, vegetation index, rainfall, and nighttime lights extracted for every unelectrified settlement, making this more spatially precise than standard national-average approaches.
 
 ---
 
@@ -72,7 +72,7 @@ benin-electrification/
 │   └── benin_electrification_analysis.ipynb   ← Main analysis notebook
 │
 ├── data/
-│   ├── raw/                                    ← Input data (not committed if >50MB)
+│   ├── raw/                                    ← Input data 
 │   │   ├── Benin_settlement_properties.geojson
 │   │   ├── Benin_existing_transmission_lines_2017.geojson
 │   │   └── Benin_GEE_Master.csv
@@ -202,7 +202,7 @@ Unlike standard OnSSET (which uses national solar averages), this model applies 
 
 ```python
 # Better solar → more energy per panel → lower unit cost (±15%)
-solar_adj = max(0.85, min(1.15, 1 - 0.05 × (GHI - 5.49) / 5.49))
+solar_adj = max(0.85, min(1.15, 1 - 0.05 * (GHI - 5.49) / 5.49))
 
 # Steeper terrain → higher installation cost
 slope_adj = 1.00 if slope ≤ 5°
@@ -311,13 +311,12 @@ Full assumptions register is documented in the notebook (Cell 11 comments and in
 
 ---
 
-## How to Run
+## 💻 How to Run
 
 ### 1. Clone the repository
-
 ```bash
-git clone https://github.com/YOUR_USERNAME/benin-electrification.git
-cd benin-electrification
+git clone [https://github.com/njerinjuguna-svg/Benin-electrification.git](https://github.com/njerinjuguna-svg/Benin-electrification.git)
+cd Benin-electrification
 ```
 
 ### 2. Set up a virtual environment
@@ -363,26 +362,6 @@ Run all cells in order (Kernel → Restart & Run All). The full analysis takes a
 
 ---
 
-## Requirements
-
-```
-geopandas>=0.14.0
-pandas>=2.0.0
-numpy>=1.24.0
-matplotlib>=3.7.0
-folium>=0.15.0
-seaborn>=0.12.0
-jupyter>=1.0.0
-notebook>=7.0.0
-```
-
-Install with:
-```bash
-pip install -r requirements.txt
-```
-
-> **Note:** `geopandas` requires `GDAL`. On some systems you may need to install it separately — see [geopandas installation guide](https://geopandas.org/en/stable/getting_started/install.html).
-
 ---
 
 ## Limitations & Future Work
@@ -425,10 +404,10 @@ The assignment evaluates:
 
 ## Author
 
-**[Your Name]**  
-[Your email]  
-[LinkedIn / Portfolio — optional]
-
+**FIDES NJERI**  
+[njerinjuguna943@gmail.com]  
+[LinkedIn] (https://www.linkedin.com/in/fides-njuguna-b4272a239/)
+[GitHub Portfolio] (https://github.com/njerinjuguna-svg/Benin-electrification)
 ---
 
 *Data sources: VIDA (settlement and grid data), Google Earth Engine (NASA ERA5, NOAA VIIRS, ESA WorldCover, Sentinel-2, WorldPop, CHIRPS), Meta AI (Relative Wealth Index). Analysis conducted May 2026.*
